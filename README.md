@@ -1,5 +1,5 @@
 # Conway's Game of Life
-A Java 1.8 Spring Boot implementation of Conway's game of life.
+A Java 1.8 Spring Boot implementation of Conway's Game of Life.
 
 ## Build application
 Run the following Maven goals:
