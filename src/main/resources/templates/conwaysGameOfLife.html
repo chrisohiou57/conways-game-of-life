@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>Conway's Game of Life</title>
+    <script type="text/javascript" th:src="@{/js/jquery-2.2.4.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/conwaysGameOfLife.js}"></script>
+    <link rel="stylesheet" th:href="@{/css/conwaysGameOfLife.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+	<div>
+		<div class="headerBanner">Conway's Game of Life</div>
+	</div>
+	<br/>
+	<div class="container">
+		<div class="row">
+			<div class="well col-md-6 col-md-offset-3">
+				<p>
+					<strong>Manual</strong> mode will allow you to click a button to see the next generation of the grid.
+					<strong>Auto</strong> mode will continuously generate the next generation.
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div id="errorContainer" class="col-md-6 col-md-offset-3 alert alert-danger" style="display:none"></div>
+		</div>
+		<div class="col-md-6 col-md-offset-3 panel panel-default">
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-4">
+						<label for="columnCount">Number of Columns</label>
+						<input type="number" id="columnCount" name="columnCount" class="form-control" value="8" />
+					</div>
+					<div class="col-md-4">
+						<label for="rowCount">Number of Rows</label>
+						<input type="number" id="rowCount" name="rowCount" class="form-control" value="6" />
+					</div>
+					<div class="col-md-4">
+						<label>Generation Strategy</label>
+						<br/>
+						<label class="radio-inline" for="generationModeManualRadio">
+					    	<input type="radio" id="generationModeManualRadio" name="generationMode" value="manual" />
+							Manual
+					    </label>
+					    &nbsp;
+					    <label class="radio-inline" for="generationModeManualAuto">
+					    	<input type="radio" id="generationModeManualAuto" name="generationMode" value="auto" />
+					    	Auto
+					    </label>
+					</div>
+				</div>
+				<br/>
+				<div class="row">
+					<div class="col-md-12">
+						<input type="button" class="btn btn-success" id="startGameBtn" value="Start Game"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div id="gridControlDisplay" class="col-md-12 text-center" style="display:none">
+				<div class="form-group">
+					<input type="button" class="btn btn-default" id="manualGenerationGridButton" value="Load Next Generation" style="display:none" />
+					<input type="button" class="btn btn-default" id="autoGenerationGridButton" value="Load Generations Continuously" style="display:none" />
+				</div>
+				<small>Generation: <span id="generationCount">1</span></small>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<table id="initialStateGridTable" class="gridTable">
+					<tbody id="initialStateGridTableBody"></tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
