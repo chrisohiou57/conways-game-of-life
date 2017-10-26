@@ -13,7 +13,7 @@ Execute the following command in the same directory (target) that the JAR file r
 java -jar conways-game-of-life.jar
 ```
 
-By default, the application runs on port 8080. If you already have something running on this port you can add *server.port=8081* to the application.properties file. You can also execute the JAR with a JVM argument to change the port as shown below.
+By default, the application runs on port 8080. If you already have something running on this port you can add *server.port=8081* to the `application.properties` file. You can also execute the JAR with a JVM argument to change the port as shown below.
 ```
 java -jar -Dserver.port=8081 conways-game-of-life.jar
 ```
